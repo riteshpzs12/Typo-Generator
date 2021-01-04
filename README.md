@@ -40,6 +40,10 @@ are at one [edit-distance](https://en.wikipedia.org/wiki/Edit_distance) from it.
 6. The output will come in a list format for all one letter typos for all indexes.
 7. No more answer is in front of You. Judge it brother.
 
+## Future Plans
+1. Add aditional typos based on deletion, insertion.
+2. Create typos of edit distance more than 1.
+
 ### Author  
 ```diff
 +Ritesh Chatterjee
