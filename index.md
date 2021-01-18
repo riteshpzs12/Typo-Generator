@@ -43,8 +43,3 @@ are at one [edit-distance](https://en.wikipedia.org/wiki/Edit_distance) from it.
 ## Future Plans
 1. Add aditional typos based on deletion, insertion.
 2. Create typos of edit distance more than 1.
-
-### Author  
-```diff
-+Ritesh Chatterjee
-```
