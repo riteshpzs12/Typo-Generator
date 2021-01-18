@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+## Typo Generator
 
-You can use the [editor on GitHub](https://github.com/riteshpzs12/Typo-Generator/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A simple tool to generate typos of a word (password).  The code takes
+an input of the path to the keyboard layout.  It is now done for the
+normal laptop keyboard, however, the code will work for any layout.
+First, you need to create a keyboard layout, and store it in a text
+file.  Sample layout is given in [`qwerty.txt`](./qwerty.txt) as
+english US laptop keyboard.  This file is required to run the code.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The code also takes a word from stdin and then generate the typos of it.
 
-### Markdown
+## Files of this Project  
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* `Build.java`, `Generator.java` ->  Main code files, Build.java is the first file to be compiled
+* `qwerty.txt`-> US English normal keyboard layout Sample with shift and unshift layouts.
+* `before_1.txt`, `before_2.txt`, `finalout.txt`-> This code builds a character array of probable typos for a given keyboard layout. before_1 and before_2 are the pattern generated from qwerty.txt for without shift and with shift respectively. finalout is the final pattern after merging those two.
+* `first_test_case.txt` -> This is the first test case i tried after the code writing was done......HA HA HA
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## How to compile
+```bash
+$ javac Build.java
 ```
+for eclipse just put these two files in the same package and run build.java first.
+## How to run  
+```bash
+$ java Build qwerty.txt
+ANUSHA
+```
+First input absolute filepath to the layout file and 2nd input is a string.
+It takes a seconary input of a String and generates all posible typos of it that
+are at one [edit-distance](https://en.wikipedia.org/wiki/Edit_distance) from it.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Main Instruction
+1. Download the whole `typo_generator/` folder in your machine.
+2. Compile `Build.java`
+3. Run `Build.class` with the first input you have to give is the absolute file path for the downloaded file.
+4. It generates the pattern with this input with the help of generator object.
+5. Give the password for which you want to know the typos as the second input.
+6. The output will come in a list format for all one letter typos for all indexes.
+7. No more answer is in front of You. Judge it brother.
 
-### Jekyll Themes
+## Future Plans
+1. Add aditional typos based on deletion, insertion.
+2. Create typos of edit distance more than 1.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/riteshpzs12/Typo-Generator/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Author  
+```diff
++Ritesh Chatterjee
+```
